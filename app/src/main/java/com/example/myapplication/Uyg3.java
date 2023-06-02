@@ -27,12 +27,12 @@ public class Uyg3 extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_uyg3);
+        setContentView(R.layout.activity_main2);
 
         urunler = new ArrayList<>();
-        listView = findViewById(R.id._dynamic);
+        listView = findViewById(R.id.listView);
         urunAdapter = new UrunAdapter(Uyg3.this, urunler);
-        btnKaydet = findViewById(R.id.btnKayitEkle);
+        btnKaydet = findViewById(R.id.button2);
         listView.setAdapter(urunAdapter);
 
         getAllurunler();

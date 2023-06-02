@@ -1,46 +1,28 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
-    SQLiteDatabase database;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         createDB();
-        inserturunadi();
+
     }
 
-    private void createDB()
+    private void createDB() {
+        database = this.openOrCreateDatabase("urun", MODE_PRIVATE, null);
+        String TABLO = "CRETA TABLE IF NOT EXIST urunler(id INTEGAR PRIMARY KEY," +
+                "urunAdi TEXT," +
+                "fiyat DOUBLE," +
+                "adet INTAGER)" +
+                database.execSQL(TABLO);
 
-
-    {
-        database = this.openOrCreateDatabase("Urun", MODE_PRIVATE, null);
-        String TABLO = "CREATE TABLE IF NOT EXISTS urunler(id INTEGER PRIMARY KEY," +
-                "urunadi TEXT," +
-                "fiyat INTEGER," +
-                "adet INTEGER)";
-        database.execSQL(TABLO);
     }
-
-    private void inserturunadi()
-
-    {
-        String SORGU="INSERT INTO urunler(urunadi,fiyat,adet) VALUES(?,?,?)";
-        SQLiteStatement results=database.compileStatement(SORGU);
-        results.bindString(1,"Araba");
-        results.bindLong(2,1000);
-        results.bindLong(3,10);
-        results.execute();
-
-
-
+    public void
     }
 }
-

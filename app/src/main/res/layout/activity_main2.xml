@@ -7,14 +7,15 @@
     tools:context=".MainActivity2">
 
     <ListView
-        android:id="@+id/_dynamic"
+        android:id="@+id/listView"
         android:layout_width="409dp"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="43dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:onClick="btnYeniKayitEkleClick"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,13 +23,14 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="89dp"
+        android:onClick="btnYeniKayitEkleClick"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_dynamic" />
+        app:layout_constraintTop_toBottomOf="@+id/listView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
